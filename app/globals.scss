@@ -34,6 +34,14 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 html,
@@ -145,6 +153,10 @@ a {
   gap: 1rem;
   margin-bottom: 1rem;
 
+  &__brand {
+    min-width: 0;
+  }
+
   &__eyebrow {
     margin: 0;
     font-size: 0.78rem;
@@ -169,6 +181,10 @@ a {
   overflow: auto;
   min-height: 0;
   padding-right: 0.1rem;
+}
+
+.mobile-tabbar {
+  display: none;
 }
 
 .ui-btn {
@@ -575,37 +591,54 @@ a {
   }
 
   .sidebar {
-    position: relative;
-    height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--panel-border);
-
-    &__nav {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 0.4rem;
-    }
-
-    &__link {
-      justify-content: center;
-      padding: 0.6rem;
-
-      span {
-        display: none;
-      }
-    }
+    display: none;
   }
 
   .app-shell__main {
-    padding: 0.8rem;
+    padding: 0.75rem 0.75rem 0;
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
-    &__actions {
-      width: 100%;
-      justify-content: flex-end;
+    &__title {
+      font-size: 1rem;
+    }
+  }
+
+  .content {
+    padding-bottom: 6rem;
+  }
+
+  .mobile-tabbar {
+    position: fixed;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.35rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 1rem;
+    background: color-mix(in oklab, var(--panel) 90%, transparent);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow);
+    padding: 0.35rem;
+    z-index: 40;
+
+    &__item {
+      display: grid;
+      justify-items: center;
+      gap: 0.2rem;
+      border-radius: 0.7rem;
+      color: var(--text-muted);
+      padding: 0.4rem 0.2rem;
+      font-size: 0.62rem;
+
+      &--active {
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
     }
   }
 }
@@ -616,7 +649,6 @@ a {
   }
 
   .topbar__actions {
-    width: 100%;
-    justify-content: space-between;
+    gap: 0.4rem;
   }
 }
