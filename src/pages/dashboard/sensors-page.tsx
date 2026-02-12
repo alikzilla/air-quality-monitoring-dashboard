@@ -9,7 +9,7 @@ function statusToVariant(status: string): 'success' | 'warning' | 'danger' {
   return 'danger';
 }
 
-export default function SensorsPage() {
+export default function SensorsPageView() {
   return (
     <Card>
       <CardHeader>

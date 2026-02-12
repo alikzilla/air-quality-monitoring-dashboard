@@ -13,7 +13,7 @@ const defaultSettings = {
   maintenanceMode: false
 };
 
-export default function SettingsPage() {
+export default function SettingsPageView() {
   const [settings, setSettings] = useState(defaultSettings);
 
   return (

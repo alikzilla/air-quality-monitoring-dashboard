@@ -22,7 +22,7 @@ function randomLog() {
   return `[${hh}:${mm}:${ss}] ${message}`;
 }
 
-export default function LogsPage() {
+export default function LogsPageView() {
   const [logs, setLogs] = useState(seedLogs);
 
   useEffect(() => {

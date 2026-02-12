@@ -10,7 +10,7 @@ function severityVariant(severity: string): 'danger' | 'warning' | 'default' {
   return 'default';
 }
 
-export default function EventsPage() {
+export default function EventsPageView() {
   return (
     <Card>
       <CardHeader>

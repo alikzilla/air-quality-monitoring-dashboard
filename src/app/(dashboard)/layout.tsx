@@ -1,9 +1,19 @@
-import { MobileTabbar } from '@/components/layout/mobile-tabbar';
-import { ProfileDropdown } from '@/components/layout/profile-dropdown';
-import { Sidebar } from '@/components/layout/sidebar';
-import { ThemeToggle } from '@/components/layout/theme-toggle';
+import { auth } from "@clerk/nextjs/server";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+import { MobileTabbar } from "@/components/custom/layout/mobile-tabbar";
+import { ProfileDropdown } from "@/components/custom/layout/profile-dropdown";
+import { Sidebar } from "@/components/custom/layout/sidebar";
+import { ThemeToggle } from "@/components/custom/layout/theme-toggle";
+
+export default async function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { userId, redirectToSignIn } = await auth();
+
+  if (!userId) return redirectToSignIn({ returnBackUrl: "/sign-in" });
+
   return (
     <div className="app-shell">
       <Sidebar />

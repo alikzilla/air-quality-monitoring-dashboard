@@ -1,0 +1,158 @@
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.chart-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.chart-area {
+  min-height: 280px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.8rem;
+}
+
+.snapshot-list {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.health-score {
+  display: grid;
+  gap: 0.6rem;
+
+  &__value {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: var(--accent);
+    font-weight: 800;
+  }
+}
+
+.log-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.log-console {
+  border: 1px solid var(--panel-border);
+  border-radius: 0.7rem;
+  background: color-mix(in oklab, var(--bg-soft) 65%, transparent);
+  max-height: 500px;
+  overflow: auto;
+  padding: 0.8rem;
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.83rem;
+  }
+}
+
+.event-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.65rem;
+  padding: 0.75rem;
+  background: color-mix(in oklab, var(--bg-soft) 55%, transparent);
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.45rem;
+    background: var(--accent-soft);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__message {
+    margin: 0.35rem 0;
+    color: var(--text-muted);
+    font-size: 0.86rem;
+  }
+
+  &__meta {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.74rem;
+  }
+}
+
+.settings-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.65rem;
+  padding: 0.75rem;
+
+  &__label {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__desc {
+    margin: 0.2rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .metric-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .chart-stack,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .metric-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
