@@ -1,4 +1,4 @@
-import SettingsPageView from '@/pages/dashboard/settings-page';
+import SettingsPageView from "@/pages/settings/settings-page";
 
 export default function SettingsPage() {
   return <SettingsPageView />;

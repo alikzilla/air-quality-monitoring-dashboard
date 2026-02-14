@@ -1,4 +1,4 @@
-import MainPageView from '@/pages/dashboard/main-page';
+import MainPageView from "@/pages/main/main-page";
 
 export default function MainPage() {
   return <MainPageView />;

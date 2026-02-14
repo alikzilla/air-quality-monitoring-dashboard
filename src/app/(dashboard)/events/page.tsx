@@ -1,4 +1,4 @@
-import EventsPageView from "@/pages/dashboard/events-page";
+import EventsPageView from "@/pages/events/events-page";
 
 export default function EventsPage() {
   return <EventsPageView />;

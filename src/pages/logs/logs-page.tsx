@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui';
 import { seedLogs } from '@/lib/data';
+import styles from './logs-page.module.scss';
 
 function randomLog() {
   const stream = [
@@ -48,12 +49,12 @@ export default function LogsPageView() {
         <CardDescription>Grafana-like stream of telemetry and alerting logs.</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="log-meta">
+        <div className={styles.logMeta}>
           <Badge variant="outline">throughput {indicators.throughput}</Badge>
           <Badge variant="outline">latency {indicators.latency}</Badge>
           <Badge variant="success">stream online</Badge>
         </div>
-        <div className="log-console" aria-live="polite">
+        <div className={styles.logConsole} aria-live="polite">
           {logs.map((line, idx) => (
             <p key={`${line}-${idx}`}>{line}</p>
           ))}

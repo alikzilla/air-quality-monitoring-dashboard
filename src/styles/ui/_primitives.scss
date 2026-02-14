@@ -200,52 +200,6 @@
   background: var(--panel-border);
 }
 
-.menu-trigger {
-  background: var(--panel);
-  border-radius: 999px;
-}
-
-.clerk-user-btn,
-.clerk-user-trigger,
-.cl-userButtonTrigger {
-  width: 2.8rem !important;
-  height: 2.8rem !important;
-  border-radius: 999px !important;
-}
-
-.clerk-user-btn {
-  border: 1px solid var(--panel-border);
-  background: var(--panel);
-  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent-soft) 25%, transparent);
-}
-
-.clerk-user-avatar,
-.cl-userButtonAvatarBox,
-.cl-avatarBox {
-  width: 2.75rem !important;
-  height: 2.75rem !important;
-  border-radius: 999px !important;
-  overflow: hidden;
-}
-
-.clerk-user-avatar img,
-.cl-avatarImage,
-.cl-userButtonAvatarImage {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
-
-.avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  display: inline-grid;
-  place-items: center;
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
 .ui-table-wrap {
   overflow-x: auto;
 }

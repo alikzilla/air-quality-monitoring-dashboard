@@ -1,0 +1,61 @@
+.dashboardGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.metricRow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.chartStack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.chartArea {
+  min-height: 280px;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.8rem;
+}
+
+.snapshotList {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.healthScore {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.healthScoreValue {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+@media (max-width: 1120px) {
+  .metricRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .chartStack,
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .metricRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

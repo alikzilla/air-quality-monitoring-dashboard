@@ -3,14 +3,15 @@
 import { useTheme } from 'next-themes';
 import { LaptopMinimal, Moon, Sun } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
+} from '@/components/ui';
+import styles from './theme-toggle.module.scss';
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -27,7 +28,7 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="menu-trigger" aria-label="Open theme menu">
+        <Button variant="outline" size="icon" className={styles.menuTrigger} aria-label="Open theme menu">
           <ActiveIcon size={20} />
         </Button>
       </DropdownMenuTrigger>

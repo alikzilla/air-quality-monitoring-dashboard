@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import styles from "./mobile-tabbar.module.scss";
 
 const items = [
   { href: "/main", label: "Main", icon: LayoutDashboard },
@@ -24,7 +25,7 @@ export function MobileTabbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="mobile-tabbar" aria-label="Mobile bottom navigation">
+    <nav className={styles.mobileTabbar} aria-label="Mobile bottom navigation">
       {items.map(({ href, label, icon: Icon }) => {
         const active = pathname === href;
         return (
@@ -33,10 +34,7 @@ export function MobileTabbar() {
             href={{
               pathname: href,
             }}
-            className={cn(
-              "mobile-tabbar__item",
-              active && "mobile-tabbar__item--active",
-            )}
+            className={cn(styles.item, active && styles.itemActive)}
           >
             <Icon size={17} />
             <span>{label}</span>

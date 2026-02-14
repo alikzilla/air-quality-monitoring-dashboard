@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import styles from "./sidebar.module.scss";
 
 const navItems = [
   { href: "/main", label: "Main", icon: LayoutDashboard },
@@ -24,15 +25,15 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar__brand">
-        <span className="sidebar__indicator" />
+    <aside className={styles.sidebar}>
+      <div className={styles.brand}>
+        <span className={styles.indicator} />
         <div>
-          <p className="sidebar__title">AIRMON</p>
-          <p className="sidebar__subtitle">terminal.monitor.v1</p>
+          <p className={styles.title}>AIRMON</p>
+          <p className={styles.subtitle}>terminal.monitor.v1</p>
         </div>
       </div>
-      <nav className="sidebar__nav" aria-label="Main navigation">
+      <nav className={styles.nav} aria-label="Main navigation">
         {navItems.map(({ href, label, icon: Icon }) => {
           const active = pathname === href;
           return (
@@ -41,7 +42,7 @@ export function Sidebar() {
               href={{
                 pathname: href,
               }}
-              className={cn("sidebar__link", active && "sidebar__link--active")}
+              className={cn(styles.link, active && styles.linkActive)}
             >
               <Icon size={16} />
               <span>{label}</span>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { ThemeProvider } from "@/components/custom/providers/theme-provider";
+import { ThemeProvider } from "@/components/custom";
 
 import "./globals.scss";
 

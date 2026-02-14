@@ -7,7 +7,8 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui";
+import styles from "./profile-dropdown.module.scss";
 
 export function ProfileDropdown() {
   return (
@@ -16,9 +17,9 @@ export function ProfileDropdown() {
         <UserButton
           appearance={{
             elements: {
-              userButtonBox: "clerk-user-btn",
-              userButtonTrigger: "clerk-user-trigger",
-              userButtonAvatarBox: "clerk-user-avatar",
+              userButtonBox: styles.userButtonBox,
+              userButtonTrigger: styles.userButtonTrigger,
+              userButtonAvatarBox: styles.userAvatarBox,
             },
           }}
         />

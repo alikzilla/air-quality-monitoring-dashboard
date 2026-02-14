@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Switch } from '@/components/ui/switch';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui';
+import { Switch } from '@/components/ui';
+import styles from './settings-page.module.scss';
 
 const defaultSettings = {
   notifications: true,
@@ -23,12 +24,12 @@ export default function SettingsPageView() {
         <CardDescription>Notification switches and runtime preferences.</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="settings-list">
+        <div className={styles.settingsList}>
           {Object.entries(settings).map(([key, value]) => (
-            <div className="settings-item" key={key}>
+            <div className={styles.settingsItem} key={key}>
               <div>
-                <p className="settings-item__label">{key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase())}</p>
-                <p className="settings-item__desc">Toggle {key.replace(/([A-Z])/g, ' $1').toLowerCase()} behavior.</p>
+                <p className={styles.settingsItemLabel}>{key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase())}</p>
+                <p className={styles.settingsItemDesc}>Toggle {key.replace(/([A-Z])/g, ' $1').toLowerCase()} behavior.</p>
               </div>
               <Switch
                 checked={value}

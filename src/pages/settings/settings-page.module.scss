@@ -1,0 +1,25 @@
+.settingsList {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.settingsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.65rem;
+  padding: 0.75rem;
+}
+
+.settingsItemLabel {
+  margin: 0;
+  font-weight: 700;
+}
+
+.settingsItemDesc {
+  margin: 0.2rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}

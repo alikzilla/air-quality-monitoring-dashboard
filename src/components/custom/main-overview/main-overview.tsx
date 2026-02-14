@@ -12,15 +12,16 @@ import {
   YAxis,
 } from "recharts";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui";
 import { metrics, timelineData } from "@/lib/data";
+import styles from "./main-overview.module.scss";
 
 const metricCards = [
   { key: "AQI", value: metrics.aqi, suffix: "", status: "Good" },
@@ -37,8 +38,8 @@ const metricCards = [
 
 export function MainOverview() {
   return (
-    <div className="dashboard-grid">
-      <section className="metric-row">
+    <div className={styles.dashboardGrid}>
+      <section className={styles.metricRow}>
         {metricCards.map((metric) => (
           <Card key={metric.key}>
             <CardHeader>
@@ -57,13 +58,13 @@ export function MainOverview() {
         ))}
       </section>
 
-      <section className="chart-stack">
+      <section className={styles.chartStack}>
         <Card>
           <CardHeader>
             <CardTitle>Air Quality Trend</CardTitle>
             <CardDescription>Hourly AQI and CO2 relation</CardDescription>
           </CardHeader>
-          <CardContent className="chart-area">
+          <CardContent className={styles.chartArea}>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={timelineData}>
                 <CartesianGrid strokeDasharray="4 4" />
@@ -97,7 +98,7 @@ export function MainOverview() {
               Temperature and humidity over time
             </CardDescription>
           </CardHeader>
-          <CardContent className="chart-area">
+          <CardContent className={styles.chartArea}>
             <ResponsiveContainer width="100%" height={280}>
               <AreaChart data={timelineData}>
                 <CartesianGrid strokeDasharray="4 4" />
@@ -122,14 +123,14 @@ export function MainOverview() {
         </Card>
       </section>
 
-      <section className="bottom-grid">
+      <section className={styles.bottomGrid}>
         <Card>
           <CardHeader>
             <CardTitle>System Snapshot</CardTitle>
             <CardDescription>Combined information</CardDescription>
           </CardHeader>
           <CardContent>
-            <ul className="snapshot-list">
+            <ul className={styles.snapshotList}>
               <li>Indoor AQI is good across most zones.</li>
               <li>CO2 spikes observed in Warehouse A at peak load.</li>
               <li>
@@ -148,8 +149,8 @@ export function MainOverview() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="health-score">
-              <span className="health-score__value">91%</span>
+            <div className={styles.healthScore}>
+              <span className={styles.healthScoreValue}>91%</span>
               <Badge variant="success">Within target</Badge>
             </div>
           </CardContent>

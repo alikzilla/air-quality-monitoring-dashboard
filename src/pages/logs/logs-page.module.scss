@@ -1,0 +1,22 @@
+.logMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.logConsole {
+  border: 1px solid var(--panel-border);
+  border-radius: 0.7rem;
+  background: color-mix(in oklab, var(--bg-soft) 65%, transparent);
+  max-height: 500px;
+  overflow: auto;
+  padding: 0.8rem;
+}
+
+.logConsole p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.83rem;
+}
