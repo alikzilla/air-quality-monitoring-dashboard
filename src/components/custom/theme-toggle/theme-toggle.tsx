@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { LaptopMinimal, Moon, Sun } from 'lucide-react';
 
@@ -15,6 +16,11 @@ import styles from './theme-toggle.module.scss';
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const options = [
     { value: 'light', icon: Sun, label: 'Light' },
@@ -23,7 +29,7 @@ export function ThemeToggle() {
   ] as const;
 
   const active = options.find((option) => option.value === theme) ?? options[0];
-  const ActiveIcon = active.icon;
+  const ActiveIcon = mounted ? active.icon : LaptopMinimal;
 
   return (
     <DropdownMenu>
@@ -33,7 +39,7 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" aria-label="Theme switcher">
-        <DropdownMenuRadioGroup value={theme ?? 'light'} onValueChange={setTheme}>
+        <DropdownMenuRadioGroup value={mounted ? theme ?? 'light' : 'light'} onValueChange={setTheme}>
           {options.map((option) => {
             const OptionIcon = option.icon;
             return (

@@ -12,8 +12,8 @@
 }
 
 .userAvatarBox {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
   border-radius: 999px !important;
   overflow: hidden;
 }
@@ -22,4 +22,11 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+}
+
+.userAvatarBoxFallback {
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  border-radius: 999px !important;
+  background: var(--skeleton);
 }

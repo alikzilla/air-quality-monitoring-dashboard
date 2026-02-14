@@ -1,0 +1,16 @@
+.skeleton {
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--panel-border) 45%, var(--bg-soft));
+  animation: skeletonPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

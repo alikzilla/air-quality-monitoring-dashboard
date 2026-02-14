@@ -5,12 +5,19 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
+  useUser,
 } from "@clerk/nextjs";
-
 import { Button } from "@/components/ui";
+import { Skeleton } from "@/components/ui/skeleton";
 import styles from "./profile-dropdown.module.scss";
 
 export function ProfileDropdown() {
+  const { isLoaded } = useUser();
+
+  if (!isLoaded) {
+    return <Skeleton className={styles.userAvatarBoxFallback} />;
+  }
+
   return (
     <>
       <SignedIn>
